@@ -7,5 +7,5 @@ Found that routes had to be added to the DI container before the Application cla
 was initialized so they would work correcly.
 
 root path '/' will default to the frontend module </br>
-admin path '/admin' will used the admin module.
+admin path '/admin' will use the admin module.
 
