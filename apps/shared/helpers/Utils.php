@@ -2,17 +2,18 @@
 /**
  * Created by PhpStorm.
  * User: Lonnie
- * Date: 8/2/15
- * Time: 12:04 AM
+ * Date: 8/3/15
+ * Time: 11:15 PM
  */
 
-namespace Lynxwall\common;
+namespace Lynxwall\Shared\Helpers;
 
 use Phalcon\Mvc\Router;
 
 
-class Helpers
+class Utils
 {
+    // Utility function to add routes
     public function addRoutes(Router $router, $key, $namespace) {
         $router->add('/'.$key.'/:params', array(
             'namespace' => $namespace,
@@ -37,4 +38,5 @@ class Helpers
         ));
 
     }
+
 }

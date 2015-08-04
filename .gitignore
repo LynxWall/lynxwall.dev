@@ -1,6 +1,7 @@
 
 # Generated files #
 *.volt.php
+.directory
 .DS_Store
 .DS_Store?
 ._*

@@ -27,9 +27,7 @@ class Module implements ModuleDefinitionInterface
         $loader->registerNamespaces(array(
             'Lynxwall\Admin\Controllers' => __DIR__ . '/controllers/',
             'Lynxwall\Admin\Models' => __DIR__ . '/models/',
-        ));
-
-        $loader->register();
+        ), true)->register();
     }
 
     /**

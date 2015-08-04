@@ -21,15 +21,12 @@ class Module implements ModuleDefinitionInterface
      */
     public function registerAutoloaders(DiInterface $di = null)
     {
-
-        $loader = new Loader();
-
+        $loader = new \Phalcon\Loader();
         $loader->registerNamespaces(array(
             'Lynxwall\Frontend\Controllers' => __DIR__ . '/controllers/',
             'Lynxwall\Frontend\Models' => __DIR__ . '/models/',
-        ));
+        ), true)->register();
 
-        $loader->register();
     }
 
     /**

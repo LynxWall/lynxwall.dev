@@ -5,6 +5,7 @@
  * @var \Phalcon\Config $config
  */
 
+use Phalcon\Loader;
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Di\FactoryDefault;
@@ -13,13 +14,17 @@ use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 
-// Load the common helpers class
-require __DIR__ . '/../apps/common/Helpers.php';
-
     /**
  * The FactoryDefault Dependency Injector automatically registers the right services to provide a full stack framework
  */
 $di = new FactoryDefault();
+
+// initialize an autoloader for helpers
+$loader = new Loader();
+$loader->registerNamespaces(array(
+    'Lynxwall\Shared\Helpers' => __DIR__ . '/../apps/shared/helpers/',
+))->register();
+
 
 /**
  * Registering a router
@@ -30,7 +35,7 @@ $di->set('router', function () {
 
     // routes need to be loaded before the application
     // and modules for everything to work
-    $helper = new \Lynxwall\common\Helpers();
+    $helper = new Lynxwall\Shared\Helpers\Utils();
     $helper->addRoutes($router, 'admin', 'Lynxwall\Admin\Controllers');
     $helper->addRoutes($router, 'frontend', 'Lynxwall\Frontend\Controllers');
 
