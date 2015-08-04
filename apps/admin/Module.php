@@ -56,6 +56,8 @@ class Module implements ModuleDefinitionInterface
             $view = new View();
 
             $view->setViewsDir($config->application->viewsDir);
+            $view->setLayoutsDir('../../shared/layouts/');
+            $view->setTemplateAfter('main');
 
             $view->registerEngines(array(
                 '.volt' => function ($view, $di) use ($config) {

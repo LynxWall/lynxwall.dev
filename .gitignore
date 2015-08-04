@@ -1,3 +1,10 @@
-/apps/admin/cache/
-/apps/frontend/cache/
-/config/development/
+
+# Generated files #
+*.volt.php
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

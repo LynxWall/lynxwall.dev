@@ -1,4 +1,4 @@
-{# Lynxwall\frontend\views\signup\signup.volt #}
+{# Lynxwall\frontend\views\signup\index.volt #}
 
 <h2>Sign up using this form</h2>
 

@@ -37,6 +37,7 @@ $di->set('router', function () {
     return $router;
 });
 
+
 /**
  * The URL component is used to generate all kinds of URLs in the application
  */
